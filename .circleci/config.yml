@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.11.13
+    working_directory: /go/src/github.com/lundin/blah2
+    steps:
+      - checkout
+      - run: go get -u github.com/urfave/cli
+      - run:
+          name: run build
+          command: |
+            go build -v
+      - run:
+          name: run tests
+          command: |
+            go fmt ./...
+            go test -v ./...
