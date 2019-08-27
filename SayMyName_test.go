@@ -7,7 +7,7 @@ func TestSayMyName(t *testing.T) {
 
 actual:=sayMyName("")
 
-if (actual!="Hello unknown") {
+if (actual!="hello unknown") {
 t.Errorf("Failed")
 } else {
 
